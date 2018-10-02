@@ -9,12 +9,10 @@ const App = () => (
   <Router>
     <div>
       <Navbar />
-      <SearchContainer/>
-      {/* <Results />
-      <Saved /> */}
-      {/* <Route exact path="/" component={SeachContainer} />
-      <Route exact path="/search" component={SeachContainer} />
-      <Route exact path="/saved" component={Saved} /> */}
+      {/* <SearchContainer/> */}
+      <Route exact path="/" component={SearchContainer} />
+      <Route exact path="/search" component={SearchContainer} />
+      {/* <Route exact path="/saved" component={Saved} />  */}
     </div>
   </Router>
 );

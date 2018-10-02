@@ -18,29 +18,23 @@ class SearchContainer extends Component {
 
   handleChange = event => {
     const { name, value } = event.target;
-    console.log(value);
+    // console.log(value);
     this.setState({
       [name]: value
     });
   };
 
-  loadArticles = () => {
-    API.scrape()
-  }
-
   handleSearch = event => {
-      event.preventDefault();
-    API.search({
-        topic: this.state.topic,
-        startYear: this.state.startYear,
-        endYear: this.state.endYear
-    })
-    .then(res => this.loadArticles())
-    .catch(err => console.log(err));
+    event.preventDefault();
+    API.scrape(function(res){
+      this.setState({this.state.results:res})})
+
+    
+
   }
 
   saveArticle = event => {
-    API.save()
+    // API.save()
   }
 
   render() {

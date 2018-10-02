@@ -1,15 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Navbar.css"
 
 const Navbar = () => (
   <div>
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-4">New York Times Scraper</h1>
-        <p class="lead">Search for and annotate articles of interest!</p>
+    <div className="jumbotron jumbotron-fluid">
+      <div className="container">
+        <h1 className="display-4">New York Times Scraper</h1>
+        <p className="lead">Search for and annotate articles of interest!</p>
       </div>
     </div>
-  <ul className="nav nav-tabs">
+  <ul className="nav nav-tabs container">
     <li className="nav-item">
       <Link
         to="/search"

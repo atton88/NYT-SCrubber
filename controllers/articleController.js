@@ -21,17 +21,18 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   createAll: function(req, res){
-    db.Article.insertMany(articles)
-        .then(function (dbArticle) {
-            // Push the added result to our array to develop our JSON
-            // console.log(dbArticle);
-            // res.redirect("/");
-            res.json(dbArticle );
-        })
-        .catch(function (err) {
-            // send error to client
-            return res.json(err);
-        });
+    db.Article
+      .insertMany(req.body)
+      .then(function (dbArticle) {
+          // Push the added result to our array to develop our JSON
+          // console.log(dbArticle);
+          // res.redirect("/");
+          res.json(dbArticle);
+      })
+      .catch(function (err) {
+          // send error to client
+          return res.json(err);
+      });
   },
   update: function(req, res) {
     db.Article
